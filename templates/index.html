@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'includes/navbar.html' %}
+<section class="land-header">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 col-12 land-header__content" data-aos="fade-right">
+            <h1 class="land-header__title"> Build & share deep learning algorithms for research & conferences
+            </h1>
+            <h5 class="land-header__sub-title">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, optio.
+            </h5>
+            <a href="#contact" class="btn btn--header land-btn"> <span></span>Start Building </a>
+        </div>
+    </div>
+</section>
+
+<div class="land__main-img">
+    <img src="{{ url_for('static', path = 'assets/img/hero-device.png')}}" alt="img">
+</div>
+
+<section class="land-features section-padding">
+    <div class="heading-text-box mb-5">
+        <h1>Our
+            <span>
+                Features
+            </span>
+            <div class="separator"><span></span></div>
+
+        </h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="land-features__item-out">
+
+                    <div class="land-features__item">
+                        <img src="{{ url_for('static', path = 'assets/img/clock.png')}}" alt="devices">
+                        <h3 class="land-features__title">
+                            Quick & easy setup
+                        </h3>
+                        <p class="land-features__para">
+                            Build UI , Host & share your deep learning models in 15 min
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="land-features__item-out">
+
+                    <div class="land-features__item">
+                        <img src="{{ url_for('static', path = 'assets/img/devices.png')}}" alt="devices">
+                        <h3 class="land-features__title">
+                            Multi platform support
+
+                        </h3>
+                        <p class="land-features__para">
+                            Build UI , Host & share your deep learning models in 15 min
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="land-features__item-out">
+
+                    <div class="land-features__item">
+                        <img src="{{ url_for('static', path = 'assets/img/benefit.png')}}" alt="devices">
+                        <h3 class="land-features__title">
+                            Main benefit of our product
+                        </h3>
+                        <p class="land-features__para">
+                            Build UI , Host & share your deep learning models in 15 min
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="land-features__item-out">
+
+                    <div class="land-features__item">
+                        <img src="{{ url_for('static', path = 'assets/img/ux-design.png')}}" alt="devices">
+                        <h3 class="land-features__title">
+                            Open source UI library
+                        </h3>
+                        <p class="land-features__para">
+                            Build UI , Host & share your deep learning models in 15 min
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="land-procedure section-padding--procedure section-padding--f bg-grey">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-md-6">
+                <div class="land-procedure__img">
+                    <img src="{{ url_for('static', path = 'assets/img/hero-device.png')}}" alt="devices">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="land-procedure__details">
+                    <div class="land-procedure__details-content">
+
+                        <h1 class="land-procedure__title">Implementing our Library</h1>
+                        <p class="land-procedure__para">
+                            Use our open-source library for building the UI .
+                        </p>
+                    </div>
+
+                    <h1 class="land-procedure__numbers">1</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="land-procedure section-padding--procedure bg-grey">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-md-6">
+                <div class="land-procedure__img">
+                    <img src="{{ url_for('static', path = 'assets/img/register.png')}}" alt="devices">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="land-procedure__details">
+                    <div class="land-procedure__details-content">
+
+                        <h1 class="land-procedure__title">Enter your details</h1>
+                        <p class="land-procedure__para">
+                            Provide the details you want to be on your profile
+                        </p>
+                    </div>
+
+                    <h1 class="land-procedure__numbers">2</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="land-procedure section-padding--procedure section-padding--l bg-grey">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-md-6">
+                <div class="land-procedure__img">
+                    <img src="{{ url_for('static', path = 'assets/img/prototype.png')}}" alt="devices">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="land-procedure__details">
+                    <div class="land-procedure__details-content">
+
+                        <h1 class="land-procedure__title">
+                            Upload the model</h1>
+                        <p class="land-procedure__para">
+                            Your profile is ready. Now upload all the files required to run the model .
+                        </p>
+                    </div>
+
+                    <h1 class="land-procedure__numbers">3</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% include 'includes/footer.html' %}
+
+{% endblock content %}

@@ -1,0 +1,243 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'includes/navbar.html' %}
+
+<section class="land-header land-header--breadcrumb">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 col-12 land-header__content" data-aos="fade-right">
+            <h1 class="land-header__title"> About us
+            </h1>
+            <h5 class="land-header__sub-title">
+                Know more about us
+            </h5>
+
+        </div>
+    </div>
+</section>
+
+<!-- --about-us-- -->
+<section class="about section-padding" id="about">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="about__content">
+                    <!-- <span class="heading__tag heading__tag--transparent">About us</span> -->
+                    <h2 class="heading__primary heading__primary--about">About Bridge.AIHUB</h2>
+                    <p class="paragraph">At Bridge, we are working to create a community where AI models can be
+                        shared freely with anyone who wants to use them, regardless of their technical
+                        expertise. Our open-source platform paired with User interface building library will
+                        enable anyone who wishes to implement AI in their daily life, research, and business to
+                        do so with drag and drop simplicity. We realized that though AI is ubiquitous, most
+                        people are unable to apply it due to the skills barrier that exists. To implement AI
+                        models, users need to have a baseline level of coding knowledge. This prevents many from
+                        ever being able to access AI unless they consult someone with the needed expertise,
+                        which is often costly. Our solution to this problem is an open-source platform where
+                        developers of AI models can publish their models, and users can implement these models
+                        completely online without needing to write any code.
+                    </p>
+
+
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="about__img-part">
+                    <img src="{{ url_for('static', path = 'assets/img/hero-device.png')}}" alt="" class="about__img">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- -x-about-us-x- -->
+<!-- Timeline -->
+<section class="timeline section-padding">
+    <div class="heading-text-box">
+        <h1>Our
+            <span>
+                Story
+            </span>
+            <div class="separator"><span></span></div>
+
+        </h1>
+    </div>
+    <ul>
+        <li>
+            <div>
+                <time>March 2022</time>
+                Both co-founders met each other at startup games competition
+            </div>
+        </li>
+        <li>
+            <div>
+                <time>March 2022</time>
+                Started with an idea called bridge healthcare, but made a pivot after our first
+                set of customer discovery to Bridge.AI
+            </div>
+        </li>
+        <li>
+            <div>
+                <time>April 2022</time>
+                Startup idea got qualified for University of Iowa startup accelerator
+            </div>
+        </li>
+        <li>
+            <div>
+                <time>April 2022</time> Our first funding came through the accelerator 😎
+            </div>
+        </li>
+        <li>
+            <div>
+                <time>April 2022</time> Our first One Million Cups presentation 😍
+            </div>
+        </li>
+        <li>
+            <div>
+                <time>Jan 2023</time> Excited to start our journey with Builders &
+                Backers startup accelerator
+            </div>
+        </li>
+        <li>
+            <div>
+                <time></time> Jouney continues ....
+            </div>
+        </li>
+
+    </ul>
+</section>
+<!-- Timeline -->
+
+<!-- --our team -->
+
+<section class="team section-padding">
+    <div class="heading-text-box">
+        <h1>Our
+            <span>
+                Team
+            </span>
+            <div class="separator"><span></span></div>
+        </h1>
+    </div>
+    <div class="container">
+        <ul class="list-members">
+            <li class="member">
+                <div class="member-image">
+                    <img src="{{ url_for('static', path = 'assets/img/team_1.jpg')}}">
+                </div>
+                <div class="member-info">
+                    <h3>Subin Erattakulangara</h3>
+                    <h4>Director , Cofounder</h4>
+                    <p>Phd scholar, University of Iowa</p>
+                    <div class="social-link">
+                        <a href="https://www.linkedin.com/in/subin-erattakulangara-69b21598/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="member">
+                <div class="member-image">
+                    <img src="{{ url_for('static', path = 'assets/img/team_2.jpg')}}">
+                </div>
+                <div class="member-info">
+                    <h3>Aravin Sivamurugan
+                    </h3>
+                    <h4>CEO , Cofounder</h4>
+                    <p>MD Candidate, University of Iowa
+                    </p>
+                    <div class="social-link">
+                        <a href="https://www.linkedin.com/in/aravin-sivamurugan-43ab35a6/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</section>
+<!-- --our team -->
+<section class="team section-padding advisor ">
+    <div class="heading-text-box">
+        <h1>Our <span>
+                Advisors
+            </span>
+            <div class="separator"><span></span></div>
+        </h1>
+    </div>
+    <div class="container">
+        <div class="team__content">
+
+            <div class="row team-items">
+                <div class="col-md-3 single-item">
+                    <div class="item">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{ url_for('static', path = 'assets/img/advison-1.jpg')}}"
+                                alt="Thumb">
+
+                        </div>
+                        <div class="info">
+
+                            <h4>Siva Paramasamy</h4>
+                            <span>Head of Engineering at <br> Wells Fargo Consumer Lending</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 single-item">
+                    <div class="item">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{ url_for('static', path = 'assets/img/advison-2.jpg')}}"
+                                alt="Thumb">
+
+                        </div>
+                        <div class="info">
+
+                            <h4>John Courtney
+                            </h4>
+                            <span>Operating partner at <br> INTANDEM CAPITAL LLC
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 single-item">
+                    <div class="item">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{ url_for('static', path = 'assets/img/advison-3.jpg')}}"
+                                alt="Thumb">
+
+                        </div>
+                        <div class="info">
+
+                            <h4>Shamus Roeder
+                            </h4>
+                            <span>Senior product manager at <br> Whiterabbit.ai</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 single-item">
+                    <div class="item">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{ url_for('static', path = 'assets/img/advisor-4.jpeg')}}"
+                                alt="Thumb">
+
+                        </div>
+                        <div class="info">
+
+                            <h4>Anu Adison
+                            </h4>
+                            <span>Senior machine learning engineer at<br> keyvalue software systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% include 'includes/footer.html' %}
+
+{% endblock content %}
