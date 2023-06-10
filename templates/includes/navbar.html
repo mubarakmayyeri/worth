@@ -1,3 +1,5 @@
+{% load static %}
+
 <nav class="land-nav" id="land-nav">
     <div class="container">
         <div class="land-nav__content">
@@ -10,33 +12,28 @@
                 </div>
             </div>
             <div class="land-nav__logo land-nav__logo--1">
-                <img src="{{ url_for('static', path = 'assets/img/logo_l_white.png')}}" alt="logo__nav">
+                <img src="{% static 'assets/img/logo.png' %}" alt="logo__nav">
             </div>
             <div class="land-nav__logo land-nav__logo--2">
-                <img src="{{ url_for('static', path = 'assets/img/logo_l.png')}}" alt="logo__nav">
+                <img src="{% static 'assets/img/logo.png' %}" alt="logo__nav">
             </div>
             <ul class="land-nav__ul">
                 <li>
-                    <a href="{{ url_for('landing') }}">
+                    <a href="">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('about') }}">
+                    <a href="">
                         About
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('contact') }}">
+                    <a href="">
                         Contact
                     </a>
                 </li>
             </ul>
-            <div class="land-nav__buttons">
-                <a href="login"
-                    class="land-nav__btn land-nav__transparent btn  land-btn land-btn--transparent">Login</a>
-                <a href="register" class="land-nav__btn btn land-btn">Register</a>
-            </div>
         </div>
     </div>
 </nav>
