@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'includes/navbar.html' %}
+<section class="land-header">
+    <div class="container">
+        <div class="col-lg-12 col-md-12 col-12 land-header__content" data-aos="fade-right">
+            <h3 class="display-5 fw-bold text-white mb-5">Find Your True Worth...</h3>
+
+            <form class="form-horizontal text-white" action="{% url 'prediction' %}" method="post">
+
+                {% csrf_token %}
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Domain</label>
+                            <select class="form-select form-select-lg" aria-label="Default select example" name="domain"
+                                id="domain" required>
+                                <option selected disabled>Select Your Domain</option>
+                                <option value="mern stack">MERN Stack</option>
+                                <option value="mean stack">MEAN Stack</option>
+                                <option value="web development using python django + reacT">Django + React</option>
+                                <option value="mobile development using flutter">Mobile development with Flutter
+                                </option>
+                                <option value="web development using node.js express">Backend development with Node.js
+                                    and Express</option>
+                                <option value="web development using python django">Backend development with Django
+                                </option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="data science">Data Science</option>
+                                <option value="machine learning">Machine Learning</option>
+                                <option value="golang">Golang</option>
+                                <option value="game development using unity">Game Development with Unity</option>
+                                <option value="devops">Devops</option>
+                                <option value="mobile development using android kotlin">Mobile Development with Android
+                                    Kotlin</option>
+                                <option value="mobile development using swift">Mobile Development with Swift</option>
+                                <option value="blockchain">Blockchain </option>
+                                <option value="frontend development using react">Frontend Development with React
+                                </option>
+                                <option value="web development using python django + angular">Web Development with
+                                    Django and Angular</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Age</label>
+                            <div class="input-group auth-pass-inputgroup">
+                                <input type="text" class="form-control" placeholder="Enter Your Age" name="age" id="age"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Preferred Designaion</label>
+                            <select class="form-select form-select-lg" aria-label="Default select example"
+                                name="designation" id="designation" required>
+                                <option selected disabled>Choose Your Preferred Designaion</option>
+                                <option value="degree">Degree</option>
+                                <option value="diploma">Diploma</option>
+                                <option value="no">No Degree/Diploma</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Computer Science Background</label>
+                            <select class="form-select form-select-lg" aria-label="Default select example" name="cs_bg"
+                                id="cs_bg" required>
+                                <option selected disabled>Do you have any CS Background?</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Experience</label>
+                            <select class="form-select form-select-lg" aria-label="Default select example"
+                                name="experience" id="experience" required>
+                                <option selected disabled>Do you have any Work Experinece?</option>
+                                <option value="yes_it">Yes [Non-IT industry]</option>
+                                <option value="yes_nit">Yes [IT industry]</option>
+                                <option value="no">Fresher</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Degree/Diploma</label>
+                            <select class="form-select form-select-lg" aria-label="Default select example" name="degree"
+                                id="degree" required>
+                                <option selected disabled>Do you hold a Degree/Diploma?</option>
+                                <option value="degree">Degree</option>
+                                <option value="diploma">Diploma</option>
+                                <option value="no">No Degree/Diploma</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Average Time Spent in Office</label>
+                            <div class="input-group auth-pass-inputgroup">
+                                <input type="text" class="form-control" placeholder="Enter Avg Time Spent in Office"
+                                    name="avg_time" id="avg_time" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Holidays</label>
+                            <select class="form-select form-select-lg" aria-label="Default select example"
+                                name="holidays" id="holidays" required>
+                                <option selected disabled>Did You Utiize Office in Holidays [Sunday, Public Holidays,
+                                    etc]?</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="mb-4">
+                            <label class="form-label">Week Backs</label>
+                            <div class="input-group auth-pass-inputgroup">
+                                <input type="text" class="form-control" placeholder="How Many Week Backs Do You Have?"
+                                    name="week_back" id="week_back" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3 d-flex justify-content-center">
+                    <div class="col-5">
+                        <div class="mb-4">
+                            <label class="form-label">Graduate?</label>
+                            <select class="form-select form-select-lg" aria-label="Default select example" name="graduate"
+                                id="graduate" required>
+                                <option selected disabled>Did you complete 6/7 months program?</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3 d-flex justify-content-center">
+                    <div class="col-5">
+                        <div class="mb-4">
+                            <label class="form-label">Technical Skills</label>
+                            <select class="form-select form-select-lg" aria-label="Default select example" name="skills"
+                                id="skills" required>
+                                <option selected disabled>Select Your Technical Skills</option>
+                                <option value="mern stack">MERN Stack</option>
+                                <option value="mean stack">MEAN Stack</option>
+                                <option value="web development using python django + reacT">Django + React</option>
+                                <option value="mobile development using flutter">Mobile development with Flutter
+                                </option>
+                                <option value="web development using node.js express">Backend development with Node.js
+                                    and Express</option>
+                                <option value="web development using python django">Backend development with Django
+                                </option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="data science">Data Science</option>
+                                <option value="machine learning">Machine Learning</option>
+                                <option value="golang">Golang</option>
+                                <option value="game development using unity">Game Development with Unity</option>
+                                <option value="devops">Devops</option>
+                                <option value="mobile development using android kotlin">Mobile Development with Android
+                                    Kotlin</option>
+                                <option value="mobile development using swift">Mobile Development with Swift</option>
+                                <option value="blockchain">Blockchain </option>
+                                <option value="frontend development using react">Frontend Development with React
+                                </option>
+                                <option value="web development using python django + angular">Web Development with
+                                    Django and Angular</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-4">
+                        <div class="mt-3 d-grid">
+                            <button class="btn btn--header land-btn" type="submit">Predict</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+
+{% include 'includes/footer.html' %}
+
+{% endblock content %}
