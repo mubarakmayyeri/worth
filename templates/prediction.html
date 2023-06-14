@@ -10,7 +10,7 @@
         <div class="col-lg-12 col-md-12 col-12 main-content_body" data-aos="fade-right">
             <h3 class="display-5 fw-bold text-white mb-5">Find Your True Worth...</h3>
 
-            <form class="form-horizontal text-white" action="{% url 'prediction' %}" method="post">
+            <form class="form-horizontal text-white" action="{% url 'prediction' %}" method="post" onsubmit="return validateForm()">
 
                 {% csrf_token %}
 
@@ -20,7 +20,7 @@
                             <label class="form-label">Domain</label>
                             <select class="form-select form-select-lg" aria-label="Default select example" name="domain"
                                 id="domain" required>
-                                <option selected disabled>Select Your Domain</option>
+                                <option selected disabled value="">Select Your Domain</option>
                                 <option value="mern stack">MERN Stack</option>
                                 <option value="mean stack">MEAN Stack</option>
                                 <option value="web development using python django + reacT">Django + React</option>
@@ -63,7 +63,7 @@
                             <label class="form-label">Preferred Designaion</label>
                             <select class="form-select form-select-lg" aria-label="Default select example"
                                 name="designation" id="designation" required>
-                                <option selected disabled>Choose Your Preferred Designaion</option>
+                                <option selected disabled value="">Choose Your Preferred Designaion</option>
                                 <option value="0">Analyst (Development)</option>
                                 <option value="1">Android Developer</option>
                                 <option value="2">Android Officer</option>
@@ -214,7 +214,7 @@
                             <label class="form-label">Computer Science Background</label>
                             <select class="form-select form-select-lg" aria-label="Default select example" name="cs_bg"
                                 id="cs_bg" required>
-                                <option selected disabled>Do you have any CS Background?</option>
+                                <option selected disabled value="">Do you have any CS Background?</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
@@ -226,7 +226,7 @@
                             <label class="form-label">Experience</label>
                             <select class="form-select form-select-lg" aria-label="Default select example"
                                 name="experience" id="experience" required>
-                                <option selected disabled>Do you have any Work Experinece?</option>
+                                <option selected disabled value="">Do you have any Work Experinece?</option>
                                 <option value="yes_it">Yes [Non-IT industry]</option>
                                 <option value="yes_nit">Yes [IT industry]</option>
                                 <option value="no">Fresher</option>
@@ -239,7 +239,7 @@
                             <label class="form-label">Degree/Diploma</label>
                             <select class="form-select form-select-lg" aria-label="Default select example" name="degree"
                                 id="degree" required>
-                                <option selected disabled>Do you hold a Degree/Diploma?</option>
+                                <option selected disabled value="">Do you hold a Degree/Diploma?</option>
                                 <option value="degree">Degree</option>
                                 <option value="diploma">Diploma</option>
                                 <option value="no">No Degree/Diploma</option>
@@ -263,7 +263,7 @@
                             <label class="form-label">Holidays</label>
                             <select class="form-select form-select-lg" aria-label="Default select example"
                                 name="holidays" id="holidays" required>
-                                <option selected disabled>Did You Utiize Office in Holidays [Sunday, Public Holidays,
+                                <option selected disabled value="">Did You Utiize Office in Holidays [Sunday, Public Holidays,
                                     etc]?</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -288,7 +288,7 @@
                             <label class="form-label">Graduate?</label>
                             <select class="form-select form-select-lg" aria-label="Default select example"
                                 name="graduate" id="graduate" required>
-                                <option selected disabled>Did you complete 6/7 months program?</option>
+                                <option selected disabled value="">Did you complete 6/7 months program?</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
@@ -320,8 +320,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                data-bs-dismiss="modal">Apply</button>
                                         </div>
                                     </div>
                                 </div>
@@ -390,5 +389,27 @@
 
     // Call the function to generate checkboxes
     generateCheckboxes();
+
+
+    // Function to validate the form before submission
+    function validateForm() {
+      var checkboxes = document.getElementsByName('skills');
+      var isChecked = false;
+
+      // Check if at least one checkbox is checked
+      for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          isChecked = true;
+          break;
+        }
+      }
+
+      if (!isChecked) {
+        alert('Please select at least one skill.');
+        return false; // Prevent form submission
+      }
+
+      return true; // Allow form submission
+    }
 </script>
 {% endblock scripts %}
