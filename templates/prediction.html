@@ -5,9 +5,9 @@
 {% block content %}
 
 {% include 'includes/navbar.html' %}
-<section class="land-header">
+<section class="main-content">
     <div class="container">
-        <div class="col-lg-12 col-md-12 col-12 land-header__content" data-aos="fade-right">
+        <div class="col-lg-12 col-md-12 col-12 main-content_body" data-aos="fade-right">
             <h3 class="display-5 fw-bold text-white mb-5">Find Your True Worth...</h3>
 
             <form class="form-horizontal text-white" action="{% url 'prediction' %}" method="post">
@@ -298,34 +298,35 @@
                 <div class="row mb-3 d-flex justify-content-center">
                     <div class="col-5">
                         <div class="mb-4">
-                            <label class="form-label">Technical Skills</label>
-                            <select class="form-select form-select-lg" aria-label="Default select example" name="skills"
-                                id="skills" required>
-                                <option selected disabled>Select Your Technical Skills</option>
-                                <option value="mern stack">MERN Stack</option>
-                                <option value="mean stack">MEAN Stack</option>
-                                <option value="web development using python django + reacT">Django + React</option>
-                                <option value="mobile development using flutter">Mobile development with Flutter
-                                </option>
-                                <option value="web development using node.js express">Backend development with Node.js
-                                    and Express</option>
-                                <option value="web development using python django">Backend development with Django
-                                </option>
-                                <option value="cybersecurity">Cybersecurity</option>
-                                <option value="data science">Data Science</option>
-                                <option value="machine learning">Machine Learning</option>
-                                <option value="golang">Golang</option>
-                                <option value="game development using unity">Game Development with Unity</option>
-                                <option value="devops">Devops</option>
-                                <option value="mobile development using android kotlin">Mobile Development with Android
-                                    Kotlin</option>
-                                <option value="mobile development using swift">Mobile Development with Swift</option>
-                                <option value="blockchain">Blockchain </option>
-                                <option value="frontend development using react">Frontend Development with React
-                                </option>
-                                <option value="web development using python django + angular">Web Development with
-                                    Django and Angular</option>
-                            </select>
+                            <!-- Button to trigger the modal technical skills-->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#technologyModal">
+                                Technical Skills
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="technologyModal" tabindex="-1"
+                                aria-labelledby="technologyModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="technologyModalLabel">Select Your Technical
+                                                Skills</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-dark" id="skillsContainer">
+                                            <!-- Checkbox for technical skills -->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -333,7 +334,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-4">
                         <div class="mt-3 d-grid">
-                            <button class="btn btn--header land-btn" type="submit">Predict</button>
+                            <button class="btn btn--header land-btn" type="submit">Find Your <b>WORTH</b></button>
                         </div>
                     </div>
                 </div>
@@ -349,3 +350,45 @@
 {% include 'includes/footer.html' %}
 
 {% endblock content %}
+
+{% block scripts %}
+<script>
+    // Array of skills
+    var skills = ['angular', 'api', 'aws', 'bootstrap', 'cnn', 'communication', 'dart', 'django', 'docker', 'express', 'firebase', 'git', 'graphql', 'html', 'hasura', 'javascript', 'jest', 'jwt', 'mongodb', 'mui', 'next', 'node', 'python', 'react', 'redux', 'sql', 'tailwind', 'typescript', 'vim'];
+
+    // Sort skills alphabetically
+    skills.sort();
+
+    // Function to generate checkboxes
+    function generateCheckboxes() {
+        var skillsContainer = document.getElementById('skillsContainer');
+
+        // Loop through each skill
+        for (var i = 0; i < skills.length; i++) {
+            // Create a new checkbox element
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'skills';
+            checkbox.value = skills[i];
+            checkbox.id = 'checkbox' + skills[i];
+
+            // Create a new label element
+            var label = document.createElement('label');
+            label.htmlFor = 'checkbox' + skills[i];
+            label.innerHTML = '&nbsp;&nbsp;&nbsp;' + skills[i].charAt(0).toUpperCase() + skills[i].slice(1);
+
+            // Create a new div element for the checkbox and label
+            var div = document.createElement('div');
+            div.className = 'form-check d-flex flex-row';
+            div.appendChild(checkbox);
+            div.appendChild(label);
+
+            // Append the div to the skills container
+            skillsContainer.appendChild(div);
+        }
+    }
+
+    // Call the function to generate checkboxes
+    generateCheckboxes();
+</script>
+{% endblock scripts %}
