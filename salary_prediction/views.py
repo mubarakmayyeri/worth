@@ -19,11 +19,8 @@ def prediction(request):
         graduate = request.POST['graduate']
         skills = request.POST.getlist('skills')
 
-        print(domain, age, designation, cs_bg, experience, degree, avg_time, holidays, week_back, graduate)
-        print('Skills', skills)
-
         df = preproc.make_df(domain, age, designation, cs_bg, experience, degree, avg_time, holidays, week_back, graduate, skills)
 
         print(df)
-        
+
     return render(request, 'prediction.html')
