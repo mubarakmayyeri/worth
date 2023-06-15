@@ -52,7 +52,7 @@
                         <div class="mb-4">
                             <label class="form-label">Age</label>
                             <div class="input-group auth-pass-inputgroup">
-                                <input type="text" class="form-control" placeholder="Enter Your Age" name="age" id="age"
+                                <input type="number" class="form-control" placeholder="Enter Your Age" name="age" id="age"
                                     required>
                             </div>
                         </div>
@@ -215,8 +215,8 @@
                             <select class="form-select form-select-lg" aria-label="Default select example" name="cs_bg"
                                 id="cs_bg" required>
                                 <option selected disabled value="">Do you have any CS Background?</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
                             </select>
                         </div>
                     </div>
@@ -227,8 +227,8 @@
                             <select class="form-select form-select-lg" aria-label="Default select example"
                                 name="experience" id="experience" required>
                                 <option selected disabled value="">Do you have any Work Experinece?</option>
-                                <option value="yes_it">Yes [Non-IT industry]</option>
-                                <option value="yes_nit">Yes [IT industry]</option>
+                                <option value="it">Yes [Non-IT industry]</option>
+                                <option value="nit">Yes [IT industry]</option>
                                 <option value="no">Fresher</option>
                             </select>
                         </div>
@@ -240,9 +240,9 @@
                             <select class="form-select form-select-lg" aria-label="Default select example" name="degree"
                                 id="degree" required>
                                 <option selected disabled value="">Do you hold a Degree/Diploma?</option>
-                                <option value="degree">Degree</option>
-                                <option value="diploma">Diploma</option>
-                                <option value="no">No Degree/Diploma</option>
+                                <option value="0">Degree</option>
+                                <option value="1">Diploma</option>
+                                <option value="2">No Degree/Diploma</option>
                             </select>
                         </div>
                     </div>
@@ -253,7 +253,7 @@
                         <div class="mb-4">
                             <label class="form-label">Average Time Spent in Office</label>
                             <div class="input-group auth-pass-inputgroup">
-                                <input type="text" class="form-control" placeholder="Enter Avg Time Spent in Office"
+                                <input type="number" class="form-control" placeholder="Enter Avg Time Spent in Office"
                                     name="avg_time" id="avg_time" required>
                             </div>
                         </div>
@@ -265,8 +265,8 @@
                                 name="holidays" id="holidays" required>
                                 <option selected disabled value="">Did You Utiize Office in Holidays [Sunday, Public Holidays,
                                     etc]?</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
                             </select>
                         </div>
                     </div>
@@ -275,7 +275,7 @@
                         <div class="mb-4">
                             <label class="form-label">Week Backs</label>
                             <div class="input-group auth-pass-inputgroup">
-                                <input type="text" class="form-control" placeholder="How Many Week Backs Do You Have?"
+                                <input type="number" class="form-control" placeholder="How Many Week Backs Do You Have?"
                                     name="week_back" id="week_back" required>
                             </div>
                         </div>

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+import pandas as pd
+from .ml_model import preprocessing as preproc
 
 # Create your views here.
 
@@ -19,5 +21,9 @@ def prediction(request):
 
         print(domain, age, designation, cs_bg, experience, degree, avg_time, holidays, week_back, graduate)
         print('Skills', skills)
+
+        df = preproc.make_df(domain, age, designation, cs_bg, experience, degree, avg_time, holidays, week_back, graduate, skills)
+
+        print(df)
         
     return render(request, 'prediction.html')
