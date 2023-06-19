@@ -7,6 +7,16 @@
 {% include 'includes/navbar.html' %}
 <section class="main-content">
     <div class="container">
+        {% if salary %}
+
+        <div class="col-lg-12 col-md-12 col-12 main-content_body mt-5" data-aos="fade-right">
+            <h3 class="h2 text-white text-center">Our analysis suggests that you are well positioned to earn <mark><b class="h1 fw-bold">{{ salary }} LPA</b></mark> based on your profile and industry trends.</h3>
+            <p class="h4 text-white m-5">Wishing you all the best as you embark on your professional journey.</p>
+        </div>
+
+
+        {% else %}
+
         <div class="col-lg-12 col-md-12 col-12 main-content_body" data-aos="fade-right">
             <h3 class="display-5 fw-bold text-white mb-5">Find Your True Worth...</h3>
 
@@ -341,6 +351,8 @@
             </form>
 
         </div>
+
+        {% endif %}
     </div>
 </section>
 

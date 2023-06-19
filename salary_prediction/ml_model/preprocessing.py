@@ -6,7 +6,6 @@ import pickle
 import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-csv_path = os.path.join(base_dir, 'csv_file', 'encoded_dataset.csv')
 scaler_path = os.path.join(base_dir, 'scaler.pkl')
 
 with open(scaler_path, 'rb') as file:
