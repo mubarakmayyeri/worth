@@ -27,7 +27,6 @@ def prediction(request):
             output = pred.make_perdiction(df)
             salary = output[0]
             salary = f'{salary:.2f}'
-            print(salary)
             
         else:
             print("Please provide the requested details!!")
