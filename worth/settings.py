@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['findyourworth.fun', 'www.findyourworth.fun', '3.110.194.231', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['findyourworth.fun', 'www.findyourworth.fun', '65.0.130.182', '127.0.0.1', 'localhost']
 
 
 # Application definition
