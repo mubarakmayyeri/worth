@@ -61,7 +61,7 @@
                         <div class="mb-4">
                             <label class="form-label">Age</label>
                             <div class="input-group auth-pass-inputgroup">
-                                <input type="number" class="form-control" placeholder="Enter Your Age" name="age" id="age"
+                                <input type="number" class="form-control" min="17" max="40" placeholder="Enter Your Age" name="age" id="age"
                                     required>
                             </div>
                         </div>
@@ -260,10 +260,10 @@
                 <div class="row mb-3">
                     <div class="col">
                         <div class="mb-4">
-                            <label class="form-label">Average Time Spent in Office</label>
+                            <label class="form-label">Avg Time Spent in Brototype</label>
                             <div class="input-group auth-pass-inputgroup">
-                                <input type="number" class="form-control" placeholder="Enter Avg Time Spent in Office"
-                                    name="avg_time" id="avg_time" required>
+                                <input type="number" class="form-control" placeholder="Enter Avg Time per Day Spent in Office"
+                                    name="avg_time" id="avg_time" min="6" max="16" required>
                             </div>
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                             <label class="form-label">Week Backs</label>
                             <div class="input-group auth-pass-inputgroup">
                                 <input type="number" class="form-control" placeholder="How Many Week Backs Do You Have?"
-                                    name="week_back" id="week_back" required>
+                                    name="week_back" min="0" max="10" id="week_back" required>
                             </div>
                         </div>
                     </div>
@@ -364,10 +364,8 @@
 {% block scripts %}
 <script>
     // Array of skills
-    var skills = ['angular', 'api', 'aws', 'bootstrap', 'cnn', 'communication', 'dart', 'django', 'docker', 'express', 'firebase', 'git', 'graphql', 'html', 'hasura', 'javascript', 'jest', 'jwt', 'mongodb', 'mui', 'next', 'node', 'python', 'react', 'redux', 'sql', 'tailwind', 'typescript', 'vim'];
+    var skills = ['angular', 'api', 'aws', 'bootstrap', 'communication', 'cnn', 'django', 'docker', 'express', 'firebase', 'dart', 'git', 'graphql', 'html', 'hasura', 'javascript', 'jest', 'jwt', 'mongodb', 'mui', 'next', 'node', 'python', 'react', 'redux', 'sql', 'tailwind', 'typescript', 'vim'];
 
-    // Sort skills alphabetically
-    skills.sort();
 
     // Function to generate checkboxes
     function generateCheckboxes() {
@@ -380,12 +378,22 @@
             checkbox.type = 'checkbox';
             checkbox.name = 'skills';
             checkbox.value = skills[i];
-            checkbox.id = 'checkbox' + skills[i];
 
+            checkbox.id = 'checkbox' + skills[i];
+            
             // Create a new label element
             var label = document.createElement('label');
             label.htmlFor = 'checkbox' + skills[i];
+
+            if (skills[i] == 'cnn'){
+                label.innerHTML = '&nbsp;&nbsp;&nbsp;Deep Learning';
+            }
+            else if (skills[i] == 'dart'){
+                label.innerHTML = '&nbsp;&nbsp;&nbsp;Flutter';
+            }
+            else{
             label.innerHTML = '&nbsp;&nbsp;&nbsp;' + skills[i].charAt(0).toUpperCase() + skills[i].slice(1);
+            }
 
             // Create a new div element for the checkbox and label
             var div = document.createElement('div');
